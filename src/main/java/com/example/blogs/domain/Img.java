@@ -1,4 +1,4 @@
-package com.example.blogs.entity;
+package com.example.blogs.domain;
 
 
 public class Img {
