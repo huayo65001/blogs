@@ -36,7 +36,7 @@ public class SwaggerConfig {
                 .enable(enabledSwagger)
                 .select()
                 //指定扫描添加了@ApiOperation注解的请求
-                .apis(RequestHandlerSelectors.basePackage("com.example.news.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.blogs.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .securitySchemes(
@@ -47,8 +47,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
 
         return new ApiInfoBuilder()
-                .title("新闻系统")
-                .description("新闻系统服务端借口")
+                .title("贴吧系统")
+                .description("贴吧系统服务端接口")
                 .version("1.0.0")
                 .build();
     }
