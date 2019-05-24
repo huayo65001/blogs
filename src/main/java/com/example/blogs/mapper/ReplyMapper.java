@@ -51,7 +51,6 @@ public interface ReplyMapper {
     int updatelikesum(UpdateReplySumDTO updateReplySumDTO);
 
     @Update("update reply set reply_unlikesum = #{sum} where reply_id = #{replyId}")
-    int updateunlikesum();
     int updateunlikesum(UpdateReplySumDTO updateReplySumDTO);
 }
 
