@@ -47,5 +47,6 @@ public interface PostbarinfoMapper {
     @Delete("delete from postbarinfo where postbar_id = #{postbarId}")
     int deletePostbarinfo(int postbarId);
 
-
+    @Delete("delete from postbarinfo where postbar_location = #{blogsId}")
+    boolean deletePostBarByBlogsId(Integer blogsId);
 }
