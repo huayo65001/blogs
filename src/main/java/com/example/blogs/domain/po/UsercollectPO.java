@@ -1,6 +1,6 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
-public class Usercollect {
+public class UsercollectPO {
 
     private long collectId;
     private String userId;

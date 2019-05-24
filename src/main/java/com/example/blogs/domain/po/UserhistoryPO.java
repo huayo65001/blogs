@@ -1,7 +1,7 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
 
-public class Userhistory {
+public class UserhistoryPO {
 
     private long historyId;
     private String userId;

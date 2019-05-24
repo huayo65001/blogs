@@ -1,7 +1,7 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
 
-public class Attuser {
+public class AttuserPO {
 
   private long attId;
   private String userAttId;

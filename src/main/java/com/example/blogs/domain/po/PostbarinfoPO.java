@@ -1,7 +1,7 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
 
-public class Postbarinfo {
+public class PostbarinfoPO {
 
   private long postbarId;
   private String postbarUserid;

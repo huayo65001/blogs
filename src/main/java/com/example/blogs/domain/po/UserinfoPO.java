@@ -1,7 +1,7 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
 
-public class Userinfo {
+public class UserinfoPO {
 
   private String userId;
   private String userName;

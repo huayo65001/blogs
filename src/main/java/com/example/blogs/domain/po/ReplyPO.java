@@ -1,7 +1,7 @@
-package com.example.blogs.domain;
+package com.example.blogs.domain.po;
 
 
-public class Reply {
+public class ReplyPO {
 
   private long replyId;
   private String replyCreateuserid;
