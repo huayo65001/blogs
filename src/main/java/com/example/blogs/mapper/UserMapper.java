@@ -6,6 +6,7 @@ import com.example.blogs.domain.dto.UserIconDTO;
 import com.example.blogs.domain.po.UserPO;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -86,4 +87,7 @@ public interface UserMapper {
 
     @Select("select user_id,user_icon from users_icon where user_id = #{userId}")
     UserIconDTO findUserIcon(Integer userId);
+
+    @Select("select u.user_id, u.user_name, u.user_sex, u.user_phone, u.user_mail, u.user_password, u.locked, u.create_time,u.update_time,u.user_role,r.role_name,r.role_description,p.permission_id,p.permission_name,p.permission_description,u.user_id_card,u.user_real_name from users as u,role as r,permissions as p where r.role_id = u.user_role and r.permission_id = p.permission_id and u.user_phone = #{userPhone}")
+    UserPO findByPhone(String userPhone);
 }

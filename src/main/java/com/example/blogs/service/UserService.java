@@ -57,6 +57,9 @@ public class UserService {
      * @return
      */
     public boolean addUser(UserDTO userDTO) {
+        if(userMapper.findByPhone(userDTO.getUserPhone())!=null){
+            return false;
+        }
         return userMapper.addUser(userDTO);
     }
 

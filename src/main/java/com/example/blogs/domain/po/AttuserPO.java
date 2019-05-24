@@ -7,6 +7,16 @@ public class AttuserPO {
   private String userAttId;
   private String userAttedId;
 
+  public AttuserPO(String userAttId, String userAttedId) {
+    this.userAttId = userAttId;
+    this.userAttedId = userAttedId;
+  }
+
+  public AttuserPO(long attId, String userAttId, String userAttedId) {
+    this.attId = attId;
+    this.userAttId = userAttId;
+    this.userAttedId = userAttedId;
+  }
 
   public long getAttId() {
     return attId;

@@ -19,7 +19,7 @@ public interface AttUserMapper {
      * @return
      */
     @Select("select count(user_atted_id) from attuser where user_att_id = #{userid}")
-    int queryAttSum(String userid);
+    Integer queryAttSum(String userid);
 
 
     /**
@@ -28,7 +28,7 @@ public interface AttUserMapper {
      * @return
      */
     @Select("select count(user_att_id) from attuser where user_atted_id = #{userid}")
-    int queryAttedSum(String userid);
+    Integer queryAttedSum(String userid);
 
     /**
      * 查看用户关注的用户的详细信息
@@ -52,7 +52,7 @@ public interface AttUserMapper {
      * @return
      */
     @Insert("insert into attuser(user_att_id,user_atted_id)values(#{userAttId},#{userAttedId})")
-    int addAttUser(AttuserPO attuserPO);
+    Boolean addAttUser(AttuserPO attuserPO);
 
 
     /**
@@ -61,6 +61,6 @@ public interface AttUserMapper {
      * @return
      */
     @Delete("delete from attuser where user_att_id = #{userAttId} and user_atted_id = #{userAttedId}")
-    int deleteAttUser(AttuserPO attuserPO);
+    Boolean deleteAttUser(AttuserPO attuserPO);
 
 }
