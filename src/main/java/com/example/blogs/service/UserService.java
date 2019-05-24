@@ -2,6 +2,7 @@ package com.example.blogs.service;
 
 import com.example.blogs.domain.dto.UpdateUserInfoDTO;
 import com.example.blogs.domain.dto.UserDTO;
+import com.example.blogs.domain.dto.UserIconDTO;
 import com.example.blogs.domain.po.UserPO;
 import com.example.blogs.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,4 +95,15 @@ public class UserService {
     }
 
 
+    public Boolean deleteIcon(Integer userId) {
+        return userMapper.deleteIcon(userId);
+    }
+
+    public boolean addIcon(UserIconDTO userIconDTO) {
+        return userMapper.addIcon(userIconDTO);
+    }
+
+    public UserIconDTO findUserIcon(Integer userId) {
+        return userMapper.findUserIcon(userId);
+    }
 }

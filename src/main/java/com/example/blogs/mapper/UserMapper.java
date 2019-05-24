@@ -2,6 +2,7 @@ package com.example.blogs.mapper;
 
 import com.example.blogs.domain.dto.UpdateUserInfoDTO;
 import com.example.blogs.domain.dto.UserDTO;
+import com.example.blogs.domain.dto.UserIconDTO;
 import com.example.blogs.domain.po.UserPO;
 import org.apache.ibatis.annotations.*;
 
@@ -75,5 +76,12 @@ public interface UserMapper {
     @Select("select user_id_card from users where user_id = #{userId}")
     String isAuth(Integer userId);
 
+    @Delete("delete from users_icon where user_id = #{userId}")
+    Boolean deleteIcon(Integer userId);
 
+    @Insert("insert into users_icon(user_id,user_icon) values(#{userId},#{userIcon})")
+    boolean addIcon(UserIconDTO userIconDTO);
+
+    @Select("select user_id,user_icon from users_icon where user_id = #{userId}")
+    UserIconDTO findUserIcon(Integer userId);
 }
