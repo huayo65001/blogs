@@ -23,14 +23,14 @@ public interface AttBlogsMapper {
      * 增加用户关注的贴吧
      */
     @Insert("insert into attblogs(user_att_id,blogs_atted_id) values(#{userAttId},#{blogsAttedId})")
-    int addAttBlogs(AttblogsPO attblogs);
+    Boolean addAttBlogs(AttblogsPO attblogs);
 
 
     /**
      * 删除用户关注的贴吧
      */
     @Delete("delete from attblogs where user_att_id = #{userAttId} and blogs_atted_id = #{blogsAttedId}")
-    int deleteAttBlogs(AttblogsPO attblogs);
+    Boolean deleteAttBlogs(AttblogsPO attblogs);
 
 
     /**
@@ -39,5 +39,5 @@ public interface AttBlogsMapper {
      * @return
      */
     @Select("select count(user_att_id) from attblogs where user_att_id = #{userid}")
-    int queryAttBlogsSum(String userid);
+    Integer queryAttBlogsSum(String userid);
 }
