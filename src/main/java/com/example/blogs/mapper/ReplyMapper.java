@@ -36,9 +36,6 @@ public interface ReplyMapper {
     @Insert("insert into reply(reply_createuserid,reply_firstuserid,firstusername,reply_seconduserid,secondname,reply_content,reply_location) values(#{replyCreateuserid},#{replyFirstuserid},#{firstusername},#{replySeconduserid},#{secondname},#{replyContent},#{replyLocation})")
     int addReply(ReplyPO reply);
 
-    int deleteReply(ReplyPO reply);
-
-    int updateReply(ReplyPO reply);
     /**
      * 删除回复
      * @param replyid
