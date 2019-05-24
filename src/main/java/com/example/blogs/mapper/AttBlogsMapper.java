@@ -4,10 +4,13 @@ import com.example.blogs.domain.po.AttblogsPO;
 import com.example.blogs.domain.po.BlogsPO;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Mapper
+@Repository
 public interface AttBlogsMapper {
     /**
      * 根据用户编号查询关注的贴吧的详细信息

@@ -5,6 +5,7 @@ import com.example.blogs.domain.dto.UserDTO;
 import com.example.blogs.domain.dto.UserIconDTO;
 import com.example.blogs.domain.po.UserPO;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * @since JDK 1.8
  */
 @Mapper
+@Repository
 public interface UserMapper {
     /**
      * 根据用户名跟密码

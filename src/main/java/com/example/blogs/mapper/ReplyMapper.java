@@ -2,10 +2,14 @@ package com.example.blogs.mapper;
 
 import com.example.blogs.domain.dto.UpdateReplySumDTO;
 import com.example.blogs.domain.po.ReplyPO;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Mapper
+@Repository
 public interface ReplyMapper {
 
 
