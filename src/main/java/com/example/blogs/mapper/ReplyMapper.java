@@ -2,18 +2,19 @@ package com.example.blogs.mapper;
 
 import com.example.blogs.domain.dto.UpdateReplySumDTO;
 import com.example.blogs.domain.po.ReplyPO;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Mapper
+@Repository
 public interface ReplyMapper {
 
 
     /**
      * 根据贴子的信息查询回复
+     *
      * @param location
      * @return
      */
@@ -22,6 +23,7 @@ public interface ReplyMapper {
 
     /**
      * 根据用户的编号查询回复
+     *
      * @param userid
      * @return
      */
@@ -30,17 +32,16 @@ public interface ReplyMapper {
 
     /**
      * 添加回复
+     *
      * @param reply
      * @return
      */
     @Insert("insert into reply(reply_createuserid,reply_firstuserid,firstusername,reply_seconduserid,secondname,reply_content,reply_location) values(#{replyCreateuserid},#{replyFirstuserid},#{firstusername},#{replySeconduserid},#{secondname},#{replyContent},#{replyLocation})")
     int addReply(ReplyPO reply);
 
-    int deleteReply(ReplyPO reply);
-
-    int updateReply(ReplyPO reply);
     /**
      * 删除回复
+     *
      * @param replyid
      * @return
      */
