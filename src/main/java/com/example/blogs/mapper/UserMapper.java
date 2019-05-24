@@ -2,8 +2,10 @@ package com.example.blogs.mapper;
 
 import com.example.blogs.domain.dto.UpdateUserInfoDTO;
 import com.example.blogs.domain.dto.UserDTO;
+import com.example.blogs.domain.dto.UserIconDTO;
 import com.example.blogs.domain.po.UserPO;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * @since JDK 1.8
  */
 @Mapper
+@Repository
 public interface UserMapper {
     /**
      * 根据用户名跟密码
@@ -75,5 +78,12 @@ public interface UserMapper {
     @Select("select user_id_card from users where user_id = #{userId}")
     String isAuth(Integer userId);
 
+    @Delete("delete from users_icon where user_id = #{userId}")
+    Boolean deleteIcon(Integer userId);
 
+    @Insert("insert into users_icon(user_id,user_icon) values(#{userId},#{userIcon})")
+    boolean addIcon(UserIconDTO userIconDTO);
+
+    @Select("select user_id,user_icon from users_icon where user_id = #{userId}")
+    UserIconDTO findUserIcon(Integer userId);
 }
