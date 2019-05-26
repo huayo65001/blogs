@@ -21,7 +21,7 @@ public interface PostbarinfoMapper {
      *
      * @return
      */
-    @Select("select * from postbarinfo limit #{rowIndex},10")
+    @Select("select * from postbarinfo where postbar_flag =1 limit #{rowIndex},10")
     List<PostbarinfoPO> query(int rowIndex);
 
     /**
@@ -30,7 +30,7 @@ public interface PostbarinfoMapper {
      * @param userid
      * @return
      */
-    @Select("select * from postbarinfo where postbar_userid = #{userid}")
+    @Select("select * from postbarinfo where postbar_userid = #{userid} and postbar_flag = 1")
     List<PostbarinfoPO> queryUserid(String userid);
 
     /**
@@ -60,6 +60,6 @@ public interface PostbarinfoMapper {
     @Delete("delete from postbarinfo where postbar_location = #{blogsId}")
     boolean deletePostBarByBlogsId(Integer blogsId);
 
-    @Select("select * from postbarinfo where postbar_content like concat('%',#{postBarInfoName},'%')")
+    @Select("select * from postbarinfo where postbar_content like concat('%',#{postBarInfoName},'%') and postbar_flag = 1")
     List<PostbarinfoPO> queryFuzzy(String postBarInfoName);
 }

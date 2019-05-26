@@ -4,6 +4,7 @@ import com.example.blogs.commonbox.Result;
 import com.example.blogs.commonbox.ResultCode;
 import com.example.blogs.commonbox.ResultGenerator;
 import com.example.blogs.domain.dto.*;
+import com.example.blogs.domain.po.UserPO;
 import com.example.blogs.domain.po.UserinfoPO;
 import com.example.blogs.service.AttUserService;
 import io.swagger.annotations.ApiModel;
@@ -64,7 +65,7 @@ public class AttUserController {
     @ApiOperation(value = "查看被关注的用户的详细信息", httpMethod = "POST", response = ResponseEntity.class)
     @PostMapping("/queryattedUser")
     public Result queryattedUser(@RequestBody UserPhoneDTO userPhoneDTO){
-        List<UserinfoPO> pos =  attUserService.queryattedUser(userPhoneDTO.getUserPhone());
+        List<UserPO> pos =  attUserService.queryattedUser(userPhoneDTO.getUserPhone());
         if(pos!=null&&pos.size()>0){
             return ResultGenerator.genSuccessResult(pos);
         }
@@ -78,7 +79,7 @@ public class AttUserController {
     @ApiOperation(value = "查看关注的用户的详细信息", httpMethod = "POST", response = ResponseEntity.class)
     @PostMapping("/queryattUser")
     public Result queryattUser(@RequestBody UserPhoneDTO userPhoneDTO){
-        List<UserinfoPO> pos = attUserService.queryattUser(userPhoneDTO.getUserPhone());
+        List<UserPO> pos = attUserService.queryattUser(userPhoneDTO.getUserPhone());
         if(pos!=null&&pos.size()>0){
             return ResultGenerator.genSuccessResult(pos);
         }

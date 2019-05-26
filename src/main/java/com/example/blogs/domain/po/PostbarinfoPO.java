@@ -12,7 +12,15 @@ public class PostbarinfoPO {
   private long postbarLikesum;
   private long postbarUnlikesum;
   private long postbarReplysum;
+  private long postbarFlag;
 
+  public long getPostbarFlag() {
+    return postbarFlag;
+  }
+
+  public void setPostbarFlag(long postbarFlag) {
+    this.postbarFlag = postbarFlag;
+  }
 
   public long getPostbarId() {
     return postbarId;

@@ -1,6 +1,7 @@
 package com.example.blogs.service;
 
 import com.example.blogs.domain.po.AttuserPO;
+import com.example.blogs.domain.po.UserPO;
 import com.example.blogs.domain.po.UserinfoPO;
 import com.example.blogs.mapper.AttUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +27,10 @@ public class AttUserService {
     public Boolean deleteAttUser(String userSendId, String userReceiveId){
         return attUserMapper.deleteAttUser(new AttuserPO(userSendId,userReceiveId));
     }
-    public List<UserinfoPO> queryattedUser(String userPhone){
+    public List<UserPO> queryattedUser(String userPhone){
         return attUserMapper.queryattedUser(userPhone);
     }
-    public List<UserinfoPO> queryattUser(String userPhone){
+    public List<UserPO> queryattUser(String userPhone){
         return attUserMapper.queryattUser(userPhone);
     }
     public Integer queryAttedSum(String userPhone){

@@ -48,7 +48,7 @@ public class UserService {
      * @return
      */
     public UserPO findByUserName(String userName) {
-        return userMapper.findByUserName(userName);
+        return userMapper.findByPhone(userName);
     }
 
     /**

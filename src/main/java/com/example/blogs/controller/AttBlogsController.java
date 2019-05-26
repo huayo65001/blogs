@@ -40,8 +40,8 @@ public class AttBlogsController {
      * @return
      */
     @ApiOperation(value = "根据用户编号查询关注的贴吧的详细信息", httpMethod = "POST", response = ResponseEntity.class)
-    @PostMapping("/addAttUser")
-    public Result addAttUser(@RequestBody UserPhoneDTO userPhoneDTO){
+    @PostMapping("/obtainAttBlogs")
+    public Result obtainAttBlogs(@RequestBody UserPhoneDTO userPhoneDTO){
         List<BlogsPO> list = attBlogsService.obtainAttBlogs(userPhoneDTO.getUserPhone());
         if(list!=null&&list.size()>0){
             return ResultGenerator.genSuccessResult(list);
@@ -65,9 +65,9 @@ public class AttBlogsController {
      * 查看被关注的用户的详细信息
      * @return
      */
-    @ApiOperation(value = "查看被关注的用户的详细信息", httpMethod = "POST", response = ResponseEntity.class)
-    @PostMapping("/queryattedUser")
-    public Result queryattedUser(@RequestBody AttblogsPO attblogsPO){
+    @ApiOperation(value = "删除关注的贴吧", httpMethod = "POST", response = ResponseEntity.class)
+    @PostMapping("/deleteAttBlogs")
+    public Result deleteAttBlogs(@RequestBody AttblogsPO attblogsPO){
         if(attBlogsService.deleteAttBlogs(attblogsPO)){
             return ResultGenerator.genSuccessResult();
         }

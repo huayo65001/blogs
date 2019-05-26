@@ -9,7 +9,15 @@ public class BlogsPO {
   private String blogsImg;
   private long blogsPostbarSum;
   private String blogsUserid;
+  private long blogsFlag;
 
+  public long getBlogsFlag() {
+    return blogsFlag;
+  }
+
+  public void setBlogsFlag(long blogsFlag) {
+    this.blogsFlag = blogsFlag;
+  }
 
   public long getBlogsInfoId() {
     return blogsInfoId;

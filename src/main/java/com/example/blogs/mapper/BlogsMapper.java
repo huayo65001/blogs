@@ -19,7 +19,7 @@ public interface BlogsMapper {
      * @param blogsName
      * @return
      */
-    @Select("select * from blogs where blogs_name like '%#{blogsName}%'")
+    @Select("select * from blogs where blogs_name like concat('%',#{blogsName},'%') and blogs_flag =1")
     List<BlogsPO> queryFuzzyBlogs(String blogsName);
 
     /**
@@ -27,10 +27,10 @@ public interface BlogsMapper {
      * @param userId
      * @return
      */
-    @Select("select * from blogs where #{userId} = blogs_userid")
+    @Select("select * from blogs where #{userId} = blogs_userid and blogs_flag = 1")
     List<BlogsPO> queryBlogs(String userId);
 
-    @Select("select * from blogs")
+    @Select("select * from blogs where blogs_flag = 1")
     List<BlogsPO> query();
 
     /**

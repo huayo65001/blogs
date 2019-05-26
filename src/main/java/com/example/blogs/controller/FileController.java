@@ -39,7 +39,7 @@ public class FileController {
     @PostMapping("/uploadFile")
     public Result uploadFile(@RequestParam(value = "file") MultipartFile file, HttpServletRequest request)throws IOException {
         //todo path需要改成服务器上某个文件的路径
-        String url = "/root/myProjects/news/picture/";
+        String url = "/usr/local/tomcat8/picture/";
 //        String url = "/Users/liubing/Desktop/";
         try {
             url = url+file.getOriginalFilename();
@@ -68,7 +68,7 @@ public class FileController {
     @RequestMapping(value = "/downloadPicture",method = RequestMethod.GET)
     public void downloadAttachment(@RequestParam("fileName")String fileName, HttpServletResponse response, HttpServletRequest request) throws Exception {
         //todo path需要改成服务器上某个文件的路径
-        String filePath = "/root/myProjects/news/picture/";
+        String filePath = "/usr/local/tomcat8/picture/";
 //        String filePath = "/Users/liubing/Desktop/";
         response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
