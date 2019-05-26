@@ -24,6 +24,9 @@ public interface PostbarinfoMapper {
     @Select("select * from postbarinfo where postbar_flag =1 limit #{rowIndex},10")
     List<PostbarinfoPO> query(int rowIndex);
 
+    @Select("select * from postbarinfo where postbar_flag = 0")
+    List<PostbarinfoPO> queryAll();
+
     /**
      * 根据用户查询贴子信息
      *
@@ -62,4 +65,7 @@ public interface PostbarinfoMapper {
 
     @Select("select * from postbarinfo where postbar_content like concat('%',#{postBarInfoName},'%') and postbar_flag = 1")
     List<PostbarinfoPO> queryFuzzy(String postBarInfoName);
+
+    @Select("select * from postbarinfo where postbar_location=#{location}")
+    List<PostbarinfoPO> queryPostbarinfoBylocation(int location);
 }

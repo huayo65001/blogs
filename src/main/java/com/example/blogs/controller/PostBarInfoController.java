@@ -2,6 +2,8 @@ package com.example.blogs.controller;
 
 import com.example.blogs.commonbox.Result;
 import com.example.blogs.commonbox.ResultGenerator;
+import com.example.blogs.domain.dto.BlogsDTO;
+import com.example.blogs.domain.dto.BlogsIdDTO;
 import com.example.blogs.domain.dto.PostBarInfoDTO;
 import com.example.blogs.domain.po.PostbarinfoPO;
 import com.example.blogs.domain.po.UserPO;
@@ -31,10 +33,22 @@ public class PostBarInfoController {
         return ResultGenerator.genSuccessResult(postBarInfoService.getAllPostBarInfoList(pageIndex));
     }
 
+    @PostMapping("/getallpostbarinfolistundenfy")
+    @ApiOperation(value = "查询所有未审核帖子", httpMethod = "POST", response = ResponseEntity.class)
+    public Result getAllPostBarInfoListUndenfy() {
+        return ResultGenerator.genSuccessResult(postBarInfoService.getAllPostBarInfoListUndenfy());
+    }
+
     @PostMapping("/getpostbarinfolistbycontent")
     @ApiOperation(value = "根据帖子内容模糊查询", httpMethod = "POST", response = ResponseEntity.class)
     public Result getPostBarInfoByContent(@RequestBody PostbarinfoPO postbarinfoPO) {
         return ResultGenerator.genSuccessResult(postBarInfoService.getPostBarInfoListByContent(postbarinfoPO.getPostbarContent()));
+    }
+
+    @PostMapping("/getpostbarinfolistbylocation")
+    @ApiOperation(value = "根据贴吧编号查询帖子内容", httpMethod = "POST", response = ResponseEntity.class)
+    public Result getPostBarInfoByLocation(@RequestBody BlogsIdDTO blogsIdDTO) {
+        return ResultGenerator.genSuccessResult(postBarInfoService.queryPostbarinfoBylocation(blogsIdDTO.getBlogsId()));
     }
 
     @PostMapping("/addpostbarinfo")

@@ -24,9 +24,19 @@ public class PostBarInfoService {
         return postbarinfoMapper.query(rowIndex);
     }
 
+    public List<PostbarinfoPO> getAllPostBarInfoListUndenfy() {
+        //int rowIndex = PageCalculator.calculateRowIndex(pageIndex, 10);
+        return postbarinfoMapper.queryAll();
+    }
+
     public List<PostbarinfoPO> getPostBarInfoListByContent(String content) {
         return postbarinfoMapper.queryFuzzy(content);
     }
+
+    public List<PostbarinfoPO> queryPostbarinfoBylocation(int location){
+        return postbarinfoMapper.queryPostbarinfoBylocation(location);
+    }
+
 
     @Transactional(rollbackFor = RuntimeException.class)
     public void removePostBarInfo(long postBarId) throws RuntimeException {
@@ -51,4 +61,6 @@ public class PostBarInfoService {
             throw new RuntimeException("修改失败");
         }
     }
+
+
 }

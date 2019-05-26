@@ -18,7 +18,7 @@ public interface ReplyMapper {
      * @param location
      * @return
      */
-    @Select("select * from reply where replyLocation = #{location}")
+    @Select("select * from reply where reply_location = #{location}")
     List<ReplyPO> queryLocation(int location);
 
     /**
@@ -27,7 +27,7 @@ public interface ReplyMapper {
      * @param userid
      * @return
      */
-    @Select("select * from reply where replyFirstuserid = #{userid}")
+    @Select("select * from reply where reply_firstuserid = #{userid}")
     List<ReplyPO> queryUserid(String userid);
 
     /**

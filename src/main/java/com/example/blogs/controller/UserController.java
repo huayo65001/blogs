@@ -147,7 +147,7 @@ public class UserController {
         UserIconDTO userIconDTO = new UserIconDTO();
         //删除用户原来的头像
         userService.deleteIcon(userId);
-        String url = "/root/myProjects/news/picture/";
+        String url = "/usr/local/tomcat8/picture/";
 //        String url = "/Users/liubing/Desktop/";
         try {
             url = url+file.getOriginalFilename();

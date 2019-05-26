@@ -91,6 +91,16 @@ public class BlogsController {
         return ResultGenerator.genSuccessResult(ResultCode.NONE_DATA);
     }
 
+    @ApiOperation(value = "查询所有未审核的贴吧", httpMethod = "POST", response = ResponseEntity.class)
+    @PostMapping("/findAllBlogsunfy")
+    public Result findAllBlogsUndenfy(){
+        List<BlogsPO> pos = blogsService.findAllBlogs();
+        if(pos!=null&&pos.size()>0){
+            return ResultGenerator.genSuccessResult(pos);
+        }
+        return ResultGenerator.genSuccessResult(ResultCode.NONE_DATA);
+    }
+
     /**
      * 查询用户创建贴吧的数量
      * @return

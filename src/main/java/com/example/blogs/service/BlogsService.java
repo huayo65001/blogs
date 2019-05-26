@@ -42,6 +42,10 @@ public class BlogsService {
         return blogsMapper.query();
     }
 
+    public List<BlogsPO> findAllBlogsUndenfy() {
+        return blogsMapper.queryUndenfy();
+    }
+
     public Integer findBlogsNumByUser(String userId) {
         return blogsMapper.queryUseridBlogsSum(userId);
     }

@@ -33,6 +33,9 @@ public interface BlogsMapper {
     @Select("select * from blogs where blogs_flag = 1")
     List<BlogsPO> query();
 
+    @Select("select * from blogs where blogs_flag = 0")
+    List<BlogsPO> queryUndenfy();
+
     /**
      * 用户创建贴吧的数目
      * @param userid
