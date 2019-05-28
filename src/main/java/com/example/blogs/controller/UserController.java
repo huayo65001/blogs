@@ -170,6 +170,20 @@ public class UserController {
     }
 
     /**
+     * 上传头像
+     * @param request
+     * @return
+     */
+    @ApiOperation(value = "上传Base64头像", httpMethod = "POST", response = ResponseEntity.class)
+    @PostMapping("/uploadiconbybase64")
+    public Result uploadFile(@RequestBody UserIconDTO userIconDTO, HttpServletRequest request)throws IOException {
+        //删除用户原来的头像
+        userService.deleteIcon(userIconDTO.getUserId());
+        userService.addIcon(userIconDTO);
+        return ResultGenerator.genSuccessResult("修改成功");
+    }
+
+    /**
      * 查询用户的头像
      * @return
      */
