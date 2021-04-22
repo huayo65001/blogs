@@ -27,7 +27,7 @@
 		<postgreSQL.version>42.2.4</postgreSQL.version>
 		<spring-boot-jap.version>1.5.15.RELEASE</spring-boot-jap.version>
 		<jwt.version>3.4.0</jwt.version>
-		<shiro-spring.version>1.4.0</shiro-spring.version>
+		<shiro-spring.version>1.7.0</shiro-spring.version>
 		<kafka-spring.version>2.1.9.RELEASE</kafka-spring.version>
 		<geotools.version>2.7.2</geotools.version>
 		<hibernate-spatial.version>5.2.10.Final</hibernate-spatial.version>
